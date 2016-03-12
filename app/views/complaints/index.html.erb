@@ -1,3 +1,6 @@
+<% provide(:title, "Complaint") %>
+<h1 class="page-header">Complaints</h1>
+
 <%= link_to "New complaint", new_complaint_path ,class: "btn btn-primary"%>
 <hr>
 <% @complaints = Complaint.all %>

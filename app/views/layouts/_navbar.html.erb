@@ -11,10 +11,13 @@
 </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav navbar-right">
+  <li><%= link_to "Secretaries", sec_path %></li>
+  <li><%= link_to "Events", events_path %></li>
+  <li><%= link_to "Hostellers", hostellers_path %></li>
 <li><%= link_to "Gallery", gallery_path %></li>
 <li><%= link_to "About", about_path %></li>
 <% if logged_in? %>
-  <li class="navbar-text">Logged in as <strong><%= current_user.name.titleize %></strong></li>
+  <li class="navbar-text"><strong><%= current_user.name.titleize %></strong></li>
 
  <li> <%= link_to "Logout", logout_path, method: :delete, :class => 'navbar-link'  %></li>
 <% else %>

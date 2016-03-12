@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  resources :complaints
   get 'sessions/new'
   
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'gallery' => 'static_pages#gallery'
+  get 'events' => 'static_pages#events'
+  get 'hostellers' => 'static_pages#hostellers'
+  get 'sec' => 'static_pages#sec'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

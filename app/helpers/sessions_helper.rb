@@ -2,6 +2,7 @@ module SessionsHelper
 	# Logs in the given user.
 	def log_in(user)
 		session[:user_id] = user.id
+		flash[:success] = 'Logged in successfully!'
 	end
 	# Remembers a user in a persistent session.
 	def remember(user)
@@ -37,5 +38,6 @@ module SessionsHelper
 		forget(current_user)
 		session.delete(:user_id)
 		@current_user = nil
+		flash[:success] = 'Logged out successfully!'
 	end
 end

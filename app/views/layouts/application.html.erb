@@ -9,17 +9,11 @@
 <%= render 'layouts/shim' %>
 </head>
 <body>
+	<%= render 'layouts/navbar' %>
 <div class="container">
-	<% if notice %>
-  <p class="alert alert-success"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
-				<span class="sr-only"> Close </span>
-			</button><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
-				<span class="sr-only"> Close </span>
-			</button><%= alert %></p>
-<% end %>
+	<% flash.each do |message_type, message| %>
+		<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
 <%= yield %>
 <%= render 'layouts/footer' %>
 </div>

@@ -7,20 +7,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-<%= link_to "the scrapwala", root_path, class: "navbar-brand", id: "logo" %>
+<%= link_to "Alakananda", root_path, class: "navbar-brand", id: "logo" %>
 </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav navbar-right">
 <li><%= link_to "Home", root_path %></li>
-<li><%= link_to "Help", help_path %></li>
 
-<% if user_signed_in? %>
-  <li class="navbar-text">Logged in as <strong><%= current_user.first_name+' '+current_user.last_name %></strong></li>
-<li>  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
- <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+<% if logged_in? %>
+  <li class="navbar-text">Logged in as <strong><%= current_user.name.titleize %></strong></li>
+
+ <li> <%= link_to "Logout", logout_path, method: :delete, :class => 'navbar-link'  %></li>
 <% else %>
-  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
-  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+  <li><%= link_to "Sign up", signup_path, :class => 'navbar-link'  %> </li>
+  <li><%= link_to "Login", login_path, :class => 'navbar-link'  %></li>
 <% end %>
 
 </li>

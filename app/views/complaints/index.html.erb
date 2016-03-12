@@ -1,0 +1,8 @@
+<%= link_to "New complaint", new_complaint_path ,class: "btn btn-primary"%>
+<hr>
+<% @complaints = Complaint.all %>
+<% @complaints.each do |complaint| %>
+<p><b><%= complaint.title %></b> <small>Submitted by <%= complaint.user.name %></small></p>
+<p><%= complaint.text %></p>
+<hr>
+<% end %>
